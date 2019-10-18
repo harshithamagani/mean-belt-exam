@@ -1,0 +1,22 @@
+<h2>Update Products</h2>
+<div *ngIf="errors">
+ <div *ngIf="errors.name">
+        <p class="error">{{errors.name.message}}</p> 
+ </div>
+ <div *ngIf="errors.qty">
+        <p class="error">{{errors.qty.message}}</p> 
+ </div>
+ <div *ngIf="errors.price">
+         <p class="error">{{errors.price.message}}</p>
+ </div>
+</div>
+<form (submit)="submitForm()">
+    <p>Name:</p>
+    <input type="text" name="name" [(ngModel)] = "myobj.name">
+    <p>Qty:</p>
+    <input type="text" name="qty" [(ngModel)] = "myobj.qty">
+    <p>Price:</p>
+    <input type="text" name="price" [(ngModel)] = "myobj.price">
+    <input type="submit" value="Edit">
+</form>
+<button (click)="backHome()">Reset</button>
